@@ -1,4 +1,5 @@
 // array
+export { default as findIndexes } from './array/find-indexes'
 export { default as pickRandom } from './array/random'
 export { default as shuffle } from './array/shuffle'
 

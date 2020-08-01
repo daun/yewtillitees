@@ -24,6 +24,7 @@ normalizer(15) // 0.5
 
 ### Array
 
+- `findIndexes`
 - `random`
 - `shuffle`
 

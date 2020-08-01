@@ -6,6 +6,20 @@ import * as yewtillitees from '../src/index'
 
 describe('Library', () => {
   // array
+  describe('findIndexes', () => {
+    it('finds the correct indexes', () => {
+      const array = ['a', 'b', 'a']
+      const indexes = yewtillitees.findIndexes(array, (item) => item === 'a')
+      assert.deepEqual(indexes, [0, 2])
+    })
+
+    it('does not mutate the array', () => {
+      const array = ['a', 'b', 'c']
+      yewtillitees.findIndexes(array, (item) => item === 'a')
+      assert.deepEqual(array, ['a', 'b', 'c'])
+    })
+  })
+
   describe('pickRandom', () => {
     it('picks an item from an array', () => {
       const item = yewtillitees.pickRandom(['a', 'b', 'c'])
