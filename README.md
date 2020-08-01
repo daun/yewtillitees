@@ -1,7 +1,56 @@
 # Yewtillitees
 
-Central helper clearinghouse.
+[![NPM version](https://img.shields.io/npm/v/yewtillitees)](https://www.npmjs.com/package/yewtillitees)
+[![GitHub license](https://img.shields.io/github/license/daun/yewtillitees)](./LICENSE)
+
+Helper functions I need often.
+
+## Installation
+
+```js
+npm install yewtillitees
+```
+
+## Usage
+
+```js
+import { normalize } from 'yewtillitees'
+
+const normalizer = normalize(10, 20)
+normalizer(15) // 0.5
+```
+
+## Helpers
+
+### Array
+
+- `random`
+- `shuffle`
+
+### Async
+
+- `sleep`
+
+### DOM
+
+- `onWindowLoad`
+
+### Number
+
+- `clamp`
+- `normalize`
+- `normalizeBetweenRanges`
+- `random`
+
+### Object
+
+- `map`
+
+### String
+
+- `camelCase`
+- `kebabCase`
 
 ## License
 
-[MIT License](https://opensource.org/licenses/MIT) © [Philipp Daun](https://philippdaun.net/)
+[MIT](https://opensource.org/licenses/MIT)
