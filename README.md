@@ -33,6 +33,8 @@ normalizer(15) // 0.5
 
 ### DOM
 
+- `onIdle`
+- `onIdleAfterLoad`
 - `onWindowLoad`
 
 ### Number
