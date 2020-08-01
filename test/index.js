@@ -1,5 +1,7 @@
 import { assert } from 'chai'
 
+import createDocument from './helpers/dom'
+
 import * as yewtillitees from '../src'
 
 describe('Library', () => {
@@ -33,6 +35,45 @@ describe('Library', () => {
         shuffled,
         ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l']
       );
+    })
+  })
+
+  // dom
+
+  describe('dom', function () {
+    this.timeout(2000)
+
+    beforeEach(function () {
+      this.doc = createDocument()
+    })
+    afterEach(function () {
+      this.doc()
+    })
+
+    describe('onWindowLoad', function () {
+      it('calls function eventually', (done) => {
+        yewtillitees.onWindowLoad(() => done())
+      })
+    })
+
+    describe('onIdle', function () {
+      it('calls function eventually', (done) => {
+        yewtillitees.onIdle(() => done())
+      })
+    })
+
+    describe('onIdleAfterLoad', function () {
+      it('calls function eventually', (done) => {
+        yewtillitees.onIdleAfterLoad(() => done())
+      })
+      it('calls function with a custom timeout', (done) => {
+        let loaded = false
+        yewtillitees.onIdleAfterLoad(() => (loaded = true), {
+          delayAfterLoad: 1250
+        })
+        setTimeout(() => assert(!loaded), 1000)
+        setTimeout(() => (assert(loaded), done()), 1500)
+      })
     })
   })
 
