@@ -1,5 +1,15 @@
 import jsdom from 'jsdom-global'
 
+export const installWindowLoadEvent = () => {
+  // Simulate window load event
+  const loadEvent = document.createEvent('Event')
+  loadEvent.initEvent('load', true, true)
+
+  window.triggerLoadEvent = () => {
+    window.dispatchEvent(loadEvent)
+  }
+}
+
 export const installIdleCallback = () => {
   window.requestIdleCallback =
     window.requestIdleCallback ||
@@ -25,6 +35,7 @@ export const installIdleCallback = () => {
 export const createDocument = () => {
   const doc = jsdom()
   installIdleCallback()
+  installWindowLoadEvent()
   return doc
 }
 

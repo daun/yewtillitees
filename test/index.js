@@ -2,7 +2,7 @@ import { assert } from 'chai'
 
 import createDocument from './helpers/dom'
 
-import * as yewtillitees from '../src'
+import * as yewtillitees from '../src/index'
 
 describe('Library', () => {
   // array
@@ -52,6 +52,29 @@ describe('Library', () => {
 
     describe('onWindowLoad', function () {
       it('calls function eventually', (done) => {
+        yewtillitees.onWindowLoad(() => done())
+      })
+    })
+
+    describe('onWindowLoad', function () {
+      it('adds listener while loading', (done) => {
+        Object.defineProperty(document, 'readyState', {
+          get() {
+            return 'loading'
+          }
+        })
+        yewtillitees.onWindowLoad(() => done())
+        window.triggerLoadEvent()
+      })
+    })
+
+    describe('onWindowLoad', function () {
+      it('calls function directly when loaded', (done) => {
+        Object.defineProperty(document, 'readyState', {
+          get() {
+            return 'complete'
+          }
+        })
         yewtillitees.onWindowLoad(() => done())
       })
     })
