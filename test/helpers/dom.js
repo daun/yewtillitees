@@ -32,8 +32,8 @@ export const installIdleCallback = () => {
     }
 }
 
-export const createDocument = () => {
-  const doc = jsdom()
+export const createDocument = (html = undefined) => {
+  const doc = jsdom(html)
   installIdleCallback()
   installWindowLoadEvent()
   return doc

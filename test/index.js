@@ -58,10 +58,31 @@ describe('Library', () => {
     this.timeout(2000)
 
     beforeEach(function () {
-      this.doc = createDocument()
+      this.doc = createDocument(`
+        <!doctype html>
+        <html>
+          <head><meta charset="utf-8"></head>
+          <body>
+            <template id='tpl'><strong>Content</strong></template>
+          </body>
+        </html>
+      `)
     })
     afterEach(function () {
       this.doc()
+    })
+
+    describe('createTemplateInstance', function () {
+      it('can fetch a template from a selector', () => {
+        const instance = yewtillitees.createTemplateInstance('#tpl')
+        assert.instanceOf(instance, DocumentFragment)
+      })
+      it('creates a new element from a template element', () => {
+        const template = document.createElement('template')
+        template.innerHTML = '<strong>Content</strong>'
+        const instance = yewtillitees.createTemplateInstance(template)
+        assert.instanceOf(instance, DocumentFragment)
+      })
     })
 
     describe('measureScrollbarSize', function () {
@@ -113,10 +134,10 @@ describe('Library', () => {
       it('calls function with a custom timeout', (done) => {
         let loaded = false
         yewtillitees.onIdleAfterLoad(() => (loaded = true), {
-          delayAfterLoad: 1250
+          delayAfterLoad: 200
         })
-        setTimeout(() => assert(!loaded), 1000)
-        setTimeout(() => (assert(loaded), done()), 1500)
+        setTimeout(() => assert(!loaded), 100)
+        setTimeout(() => (assert(loaded), done()), 300)
       })
     })
   })

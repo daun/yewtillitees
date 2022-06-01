@@ -34,10 +34,11 @@ normalizer(15) // 0.5
 
 ### DOM
 
+- `createTemplateInstance`
+- `measureScrollbarSize`
 - `onIdle`
 - `onIdleAfterLoad`
 - `onWindowLoad`
-- `measureScrollbarSize`
 
 ### Number
 
