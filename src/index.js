@@ -8,6 +8,7 @@ export { default as sleep } from './async/sleep'
 
 // dom
 export { default as createTemplateInstance } from './dom/create-template-instance'
+export { default as measureScrollbarSize } from './dom/measure-scrollbar-size'
 export { default as onIdle } from './dom/on-idle'
 export { default as onIdleAfterLoad } from './dom/on-idle-after-load'
 export { default as onWindowLoad } from './dom/on-window-load'

@@ -64,6 +64,13 @@ describe('Library', () => {
       this.doc()
     })
 
+    describe('measureScrollbarSize', function () {
+      it('returns a number', () => {
+        const size = yewtillitees.measureScrollbarSize()
+        assert(typeof size === 'number')
+      })
+    })
+
     describe('onWindowLoad', function () {
       it('calls function eventually', (done) => {
         yewtillitees.onWindowLoad(() => done())
