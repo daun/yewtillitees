@@ -25,7 +25,7 @@ normalizer(15) // 0.5
 ### Array
 
 - `findIndexes`
-- `random`
+- `pickRandom`
 - `shuffle`
 
 ### Async
@@ -46,6 +46,7 @@ normalizer(15) // 0.5
 - `normalize`
 - `normalizeBetweenRanges`
 - `random`
+- `randomInteger`
 
 ### Object
 
