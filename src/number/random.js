@@ -1,4 +1,7 @@
-export default function random(a, b) {
-  if (b === undefined) return Math.random() * a
-  return a + Math.random() * (b - a)
+export default function random(min, max) {
+  if (max === undefined) {
+    max = min
+    min = 0
+  }
+  return min + Math.random() * (max - min)
 }

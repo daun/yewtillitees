@@ -214,6 +214,22 @@ describe('Library', () => {
     })
   })
 
+  describe('randomInteger', () => {
+    it('generates a random integer', () => {
+      const n = yewtillitees.randomInteger(10)
+      assert.ok(Number.isInteger)
+      assert.ok(n >= 0)
+      assert.ok(n <= 10)
+    })
+
+    it('generates a random number between a and b', () => {
+      const n = yewtillitees.randomInteger(50, 60)
+      assert.ok(Number.isInteger)
+      assert.ok(n >= 50)
+      assert.ok(n <= 60)
+    })
+  })
+
   // object
   describe('mapObject', () => {
     it('maps over the object', () => {

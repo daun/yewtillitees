@@ -19,6 +19,7 @@ export { default as linearScale } from './number/linear'
 export { default as normalize } from './number/normalize'
 export { default as normalizeBetweenRanges } from './number/normalizeBetweenRanges'
 export { default as random } from './number/random'
+export { default as randomInteger } from './number/randomInteger'
 
 // object
 export { default as mapObject } from './object/map'
