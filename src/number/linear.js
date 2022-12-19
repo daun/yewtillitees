@@ -3,8 +3,8 @@ export default function linear(
   [rangeMin, rangeMax] = [0, 1]
 ) {
   const delta = (rangeMax - rangeMin) / (domainMax - domainMin)
+  const linearFn = (num) => rangeMin + (num - domainMin) * delta
+  const inverseFn = () => linear([rangeMin, rangeMax], [domainMin, domainMax])
 
-  return Object.assign((num) => rangeMin + (num - domainMin) * delta, {
-    inverse: () => linear([rangeMin, rangeMax], [domainMin, domainMax])
-  })
+  return Object.assign(linearFn, { inverse: inverseFn })
 }
