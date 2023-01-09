@@ -38,6 +38,7 @@ normalizer(15) // 0.5
 - `measureScrollbarSize`
 - `onIdle`
 - `onIdleAfterLoad`
+- `onDomReady`
 - `onWindowLoad`
 
 ### Number

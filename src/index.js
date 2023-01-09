@@ -11,6 +11,7 @@ export { default as createTemplateInstance } from './dom/create-template-instanc
 export { default as measureScrollbarSize } from './dom/measure-scrollbar-size'
 export { default as onIdle } from './dom/on-idle'
 export { default as onIdleAfterLoad } from './dom/on-idle-after-load'
+export { default as onDomReady } from './dom/on-dom-ready'
 export { default as onWindowLoad } from './dom/on-window-load'
 
 // number
