@@ -35,6 +35,7 @@ normalizer(15) // 0.5
 ### DOM
 
 - `createTemplateInstance`
+- `measureDocumentHeight`
 - `measureScrollbarSize`
 - `onIdle`
 - `onIdleAfterLoad`

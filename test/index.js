@@ -85,6 +85,13 @@ describe('Library', () => {
       })
     })
 
+    describe('measureDocumentHeight', function () {
+      it('returns a number', () => {
+        const size = yewtillitees.measureDocumentHeight()
+        assert(typeof size === 'number')
+      })
+    })
+
     describe('measureScrollbarSize', function () {
       it('returns a number', () => {
         const size = yewtillitees.measureScrollbarSize()
